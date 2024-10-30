@@ -16,6 +16,7 @@ export default function Home() {
             width={800}
             height={500}
             className="object-cover h-[12.5rem] sm:h-full sm:w-full"
+            priority
           />
         </section>
         <section className="col-span-12 md:col-span-5 sm:col-span-6 p-[2rem] md:p-[4rem]">
