@@ -4,10 +4,11 @@ export const initialState = {
   isAuthenticated: false,
   isLoaging: false,
   error: null,
+  store: {},
+  products: [],
 };
 
 export const AppReducer = (state, action) => {
-  console.log(state, "state Reducer");
   switch (action.type) {
     case "LOGIN":
       return {
@@ -21,6 +22,10 @@ export const AppReducer = (state, action) => {
       return { ...state, isLoaging: action.payload };
     case "SET_ERROR":
       return { ...state, error: action.payload };
+    case "SET_STORE":
+      return { ...state, store: action.payload };
+    case "SET_PRODUCTS":
+      return { ...state, products: action.payload };
     default:
       return state;
   }

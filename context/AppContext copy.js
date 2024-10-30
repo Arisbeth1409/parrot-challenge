@@ -14,7 +14,6 @@ export const AppProvider = ({ children }) => {
     if (state.token) {
       initTokenInterval();
     } else {
-      document.cookie = "token=; path=/; Secure";
       localStorage.removeItem("token");
       localStorage.removeItem("refreshToken");
     }
@@ -107,7 +106,6 @@ export const AppProvider = ({ children }) => {
     clearInterval(refreshInterval);
     localStorage.removeItem("token");
     localStorage.removeItem("refreshToken");
-    document.cookie = "token=; path=/; Secure";
     toast.error("Tu sesión ha expirado, inicia sesión nuevamente");
     dispatch({
       type: "LOGIN",
